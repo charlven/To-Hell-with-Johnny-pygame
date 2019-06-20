@@ -1,18 +1,17 @@
 #coding=gb2312
-import pygame,random
+import pygame,random,time
 from settings import Settings
 ai_settings=Settings()
-#定义第一个普通障碍
-class Ordinary_1():
+class Ordinary_3():
 	def __init__(self,screen):
 		self.screen=screen
 		#引入第一个普通障碍的图像、矩形
 		self.image=pygame.image.load('images/common.png')
 		self.rect=self.image.get_rect()
 		#横坐标为（300，350）内的一个随机数
-		self.rect.centerx=random.randrange(50,250)
+		self.rect.centerx=random.randrange(250,400)
 		#纵坐标为（100，200）的一个随机数
-		self.rect.centery=random.randrange(50,100)
+		self.rect.centery=random.randrange(200,300)
 		self.y=float(self.rect.y)
 	
 	#定义更新普通障碍的数值坐标函数
@@ -33,3 +32,4 @@ class Ordinary_1():
 		
 	def blitme(self):
 		self.screen.blit(self.image,self.rect)
+
